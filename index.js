@@ -7,6 +7,8 @@ const authOptions = {
   token: process.env.GIT_TOKEN,
 };
 
-ghrepos.listUser(authOptions, "junho100", function (err, repolist) {
-  axios.get();
+ghrepos.listUser(authOptions, "junho100", async (err, repos) => {
+  const now = repos[0];
+  const a = await axios.get(now.languages_url);
+  console.log(a.data);
 });
